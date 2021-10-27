@@ -26,37 +26,48 @@ def survivorMenu():
 
   while survMenuOption is True:
     print('\n*** SURVIVOR MENU ***')
-    survMenuChoice = input('\n1. (C)haracter\n2. (P)erks\n3. (B)ack\n> ')
+    survMenuChoice = input('\n1. Survivor\n2. Perks\n3. Survivor List\n4. Perk List\n5. Back\n> ')
     survMenuChoice = survMenuChoice.upper()
 
-    if survMenuChoice == 'C':
+    if survMenuChoice == '1':
       randomSurvivor()
       survMenuOption = False
-    elif survMenuChoice == 'P':
+    elif survMenuChoice == '2':
       print('Random Perks')
       survMenuOption = False
-    elif survMenuChoice == 'B':
+    elif survMenuChoice == '3':
+      print(survivorNames)
+    elif survMenuChoice == '4':
+      print('Perk List')
+    elif survMenuChoice == '5':
       mainMenu()
       survMenuOption = False
     else:
-      print('\nInvalid input! Use C, P or B!\n')
+      print('\nInvalid input! Please enter a number between 1 - 5\n')
 
 def killerMenu():
   killerMenuOption = True
 
   while killerMenuOption is True:
     print('\n*** KILLER MENU ***')
-    killerMenuChoice = input('\n1. (C)haracter\n2. (P)erks\n3. (B)ack\n> ')
-    killerMenuChoice = killerMenuChoice.upper()
+    killerMenuChoice = input('\n1. Killer\n2. Perks\n3. Killer List\n4. Perk List\n5. Back\n> ')
+    #killerMenuChoice = killerMenuChoice.upper()
 
-    if killerMenuChoice == 'C':
+    if killerMenuChoice == '1':
       randomKiller()
       killerMenuOption = False
-    elif killerMenuChoice == 'P':
+    elif killerMenuChoice == '2':
       print('Random Perks')
       killerMenuOption = False
+    elif killerMenuChoice == '3':
+      print(killerNames)
+    elif killerMenuChoice == '4':
+      print('Perk List')
+    elif killerMenuChoice == '5':
+      mainMenu()
+      killerMenuOption = False
     else:
-      print('\nInvalid input! Use C, P or B!\n')
+      print('\nInvalid input! Please enter a number between 1 - 5\n')
 
 def randomSurvivor():
   randomSurv = True
@@ -82,9 +93,7 @@ def randomSurvivor():
       print('      ' + random_array_item)
 
     elif goAgain == 'N':
-      print('Ending program....')
-      print('**********')
-      sys.exit()
+      survivorMenu()
 
     else:
       print('\nInvalid input! Please enter Y/N')
