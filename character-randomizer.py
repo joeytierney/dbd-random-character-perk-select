@@ -4,8 +4,8 @@ import sys
 def mainMenu():
   menuOption = True
   while menuOption is True:
-    print('*** WELCOME, TO DEAD BY DAYLIGHT CHARACTER/PERK ROULETTE! ***')
-    userChoice = input('\n- (S)urvivor\n- (K)iller\n- (E)xit\n>')
+    print('\n*** WELCOME, TO DEAD BY DAYLIGHT CHARACTER/PERK ROULETTE! ***')
+    userChoice = input('\n1. (S)urvivor\n2. (K)iller\n3. (E)xit\n>')
     userChoice = userChoice.upper()
 
     if userChoice == 'S':
@@ -15,18 +15,18 @@ def mainMenu():
       killerMenu()
       menuOption = False
     elif userChoice == 'E':
-      print('Ending program....')
+      print('\nEnding program....')
       print('**********')
       sys.exit()
     else:
-      print('\nInvalid input! Use S or K\n')
+      print('\nInvalid input! Use S, K or E!\n')
 
 def survivorMenu():
   survMenuOption = True
 
   while survMenuOption is True:
     print('\n*** SURVIVOR MENU ***')
-    survMenuChoice = input('\n- (C)haracter\n- (P)erks\n- (B)ack\n> ')
+    survMenuChoice = input('\n1. (C)haracter\n2. (P)erks\n3. (B)ack\n> ')
     survMenuChoice = survMenuChoice.upper()
 
     if survMenuChoice == 'C':
@@ -36,21 +36,27 @@ def survivorMenu():
       print('Random Perks')
       survMenuOption = False
     elif survMenuChoice == 'B':
-      print()
       mainMenu()
       survMenuOption = False
     else:
-      print('\nInvalid input! Use C or P\n')
+      print('\nInvalid input! Use C, P or B!\n')
 
 def killerMenu():
-  print('\n*** KILLER MENU ***')
-  killerMenuChoice = input('\n(C)haracter or (P)erks?\n> ')
-  killerMenuChoice = killerMenuChoice.upper()
+  killerMenuOption = True
 
-  if killerMenuChoice == 'C':
-    randomKiller()
-  elif killerMenuChoice == 'P':
-    print('Random Perks')
+  while killerMenuOption is True:
+    print('\n*** KILLER MENU ***')
+    killerMenuChoice = input('\n1. (C)haracter\n2. (P)erks\n3. (B)ack\n> ')
+    killerMenuChoice = killerMenuChoice.upper()
+
+    if killerMenuChoice == 'C':
+      randomKiller()
+      killerMenuOption = False
+    elif killerMenuChoice == 'P':
+      print('Random Perks')
+      killerMenuOption = False
+    else:
+      print('\nInvalid input! Use C, P or B!\n')
 
 def randomSurvivor():
   randomSurv = True
