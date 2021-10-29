@@ -122,9 +122,7 @@ def randomKiller():
       print('      ' + random_array_item)
 
     elif goAgain == 'N':
-      print('Ending program....')
-      print('**********')
-      sys.exit()
+      killerMenu()
 
     else:
       print('\nInvalid input! Please enter Y/N')
