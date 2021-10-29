@@ -33,7 +33,7 @@ def survivorMenu():
       randomSurvivor()
       survMenuOption = False
     elif survMenuChoice == '2':
-      print('Random Perks')
+      randomPerkSurv()
       survMenuOption = False
     elif survMenuChoice == '3':
       print(survivorNames)
@@ -123,6 +123,47 @@ def randomKiller():
 
     elif goAgain == 'N':
       killerMenu()
+
+    else:
+      print('\nInvalid input! Please enter Y/N')
+
+def randomPerkSurv():
+  randomSurvPerk = True
+  # Declare a variable as a random choice
+  random_array_item = random.choice(survPerks)
+  random_array_item1 = random.choice(survPerks)
+  random_array_item2 = random.choice(survPerks)
+  random_array_item3 = random.choice(survPerks)
+
+  # Print the random choice
+  print('\n***** RANDOM SURVIVOR *****')
+  print('')
+  print('      ' + random_array_item)
+  print('      ' + random_array_item1)
+  print('      ' + random_array_item2)
+  print('      ' + random_array_item3)
+
+  while randomSurvPerk is True:
+    goAgain = input('\nWould you like to go again? (Y/N)\n> ')
+    goAgain = goAgain.upper()
+
+    if goAgain == 'Y':
+      # Declare a variable as a random choice
+      random_array_item = random.choice(survPerks)
+      random_array_item1 = random.choice(survPerks)
+      random_array_item2 = random.choice(survPerks)
+      random_array_item3 = random.choice(survPerks)
+
+      # Print the random choice
+      print('\n***** RANDOM SURVIVOR *****')
+      print('')
+      print('      ' + random_array_item)
+      print('      ' + random_array_item1)
+      print('      ' + random_array_item2)
+      print('      ' + random_array_item3)
+
+    elif goAgain == 'N':
+      survivorMenu()
 
     else:
       print('\nInvalid input! Please enter Y/N')
@@ -223,7 +264,7 @@ survPerks = ['Ace in the Hole',
  'Deception',
  'Decisive Strike',
  'Deliverance',
- 'Desperate Measures'
+ 'Desperate Measures',
  'Detective\'s Hunch',
  'Distortion',
  'Diversion',
@@ -386,7 +427,9 @@ mainMenu()
 killerMenu()
 survivorMenu()
 randomSurvivor()
+randomPerkSurv()
 randomKiller()
 
 randomSurv = False
 randomKilr = False
+randomSurvPerk = False
