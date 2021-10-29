@@ -5,21 +5,20 @@ def mainMenu():
   menuOption = True
   while menuOption is True:
     print('\n*** WELCOME, TO DEAD BY DAYLIGHT CHARACTER/PERK ROULETTE! ***')
-    userChoice = input('\n1. (S)urvivor\n2. (K)iller\n3. (E)xit\n>')
-    userChoice = userChoice.upper()
+    userChoice = input('\n1. Survivor\n2. Killer\n3. Exit\n> ')
 
-    if userChoice == 'S':
+    if userChoice == '1':
       survivorMenu()
       menuOption = False
-    elif userChoice == 'K':
+    elif userChoice == '2':
       killerMenu()
       menuOption = False
-    elif userChoice == 'E':
+    elif userChoice == '3':
       print('\nEnding program....')
       print('**********')
       sys.exit()
     else:
-      print('\nInvalid input! Use S, K or E!\n')
+      print('\nInvalid input! Please enter a number between 1 - 3\n')
 
 def survivorMenu():
   survMenuOption = True
@@ -27,7 +26,6 @@ def survivorMenu():
   while survMenuOption is True:
     print('\n*** SURVIVOR MENU ***')
     survMenuChoice = input('\n1. Survivor\n2. Perks\n3. Survivor List\n4. Perk List\n5. Back\n> ')
-    survMenuChoice = survMenuChoice.upper()
 
     if survMenuChoice == '1':
       randomSurvivor()
@@ -51,7 +49,6 @@ def killerMenu():
   while killerMenuOption is True:
     print('\n*** KILLER MENU ***')
     killerMenuChoice = input('\n1. Killer\n2. Perks\n3. Killer List\n4. Perk List\n5. Back\n> ')
-    #killerMenuChoice = killerMenuChoice.upper()
 
     if killerMenuChoice == '1':
       randomKiller()
@@ -136,12 +133,12 @@ def randomPerkSurv():
   random_array_item3 = random.choice(survPerks)
 
   # Print the random choice
-  print('\n***** RANDOM SURVIVOR *****')
+  print('\n***** RANDOM SURVIVOR PERKS *****')
   print('')
-  print('      ' + random_array_item)
-  print('      ' + random_array_item1)
-  print('      ' + random_array_item2)
-  print('      ' + random_array_item3)
+  print('PERK 1: ' + random_array_item)
+  print('PERK 2: ' + random_array_item1)
+  print('PERK 3: ' + random_array_item2)
+  print('PERK 4: ' + random_array_item3)
 
   while randomSurvPerk is True:
     goAgain = input('\nWould you like to go again? (Y/N)\n> ')
@@ -155,12 +152,12 @@ def randomPerkSurv():
       random_array_item3 = random.choice(survPerks)
 
       # Print the random choice
-      print('\n***** RANDOM SURVIVOR *****')
+      print('\n***** RANDOM SURVIVOR PERKS *****')
       print('')
-      print('      ' + random_array_item)
-      print('      ' + random_array_item1)
-      print('      ' + random_array_item2)
-      print('      ' + random_array_item3)
+      print('PERK 1: ' + random_array_item)
+      print('PERK 2: ' + random_array_item1)
+      print('PERK 3: ' + random_array_item2)
+      print('PERK 4: ' + random_array_item3)
 
     elif goAgain == 'N':
       survivorMenu()
