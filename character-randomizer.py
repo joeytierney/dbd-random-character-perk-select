@@ -54,7 +54,7 @@ def killerMenu():
       randomKiller()
       killerMenuOption = False
     elif killerMenuChoice == '2':
-      print('Random Perks')
+      randomPerkKiller()
       killerMenuOption = False
     elif killerMenuChoice == '3':
       print(killerNames)
@@ -161,6 +161,47 @@ def randomPerkSurv():
 
     elif goAgain == 'N':
       survivorMenu()
+
+    else:
+      print('\nInvalid input! Please enter Y/N')
+
+def randomPerkKiller():
+  randomKillerPerk = True
+  # Declare a variable as a random choice
+  random_array_item = random.choice(killerPerks)
+  random_array_item1 = random.choice(killerPerks)
+  random_array_item2 = random.choice(killerPerks)
+  random_array_item3 = random.choice(killerPerks)
+
+  # Print the random choice
+  print('\n***** RANDOM KILLER PERKS *****')
+  print('')
+  print('PERK 1: ' + random_array_item)
+  print('PERK 2: ' + random_array_item1)
+  print('PERK 3: ' + random_array_item2)
+  print('PERK 4: ' + random_array_item3)
+
+  while randomKillerPerk is True:
+    goAgain = input('\nWould you like to go again? (Y/N)\n> ')
+    goAgain = goAgain.upper()
+
+    if goAgain == 'Y':
+      # Declare a variable as a random choice
+      random_array_item = random.choice(killerPerks)
+      random_array_item1 = random.choice(killerPerks)
+      random_array_item2 = random.choice(killerPerks)
+      random_array_item3 = random.choice(killerPerks)
+
+      # Print the random choice
+      print('\n***** RANDOM KILLER PERKS *****')
+      print('')
+      print('PERK 1: ' + random_array_item)
+      print('PERK 2: ' + random_array_item1)
+      print('PERK 3: ' + random_array_item2)
+      print('PERK 4: ' + random_array_item3)
+
+    elif goAgain == 'N':
+      killerMenu()
 
     else:
       print('\nInvalid input! Please enter Y/N')
@@ -426,7 +467,9 @@ survivorMenu()
 randomSurvivor()
 randomPerkSurv()
 randomKiller()
+randomPerkKiller()
 
 randomSurv = False
 randomKilr = False
 randomSurvPerk = False
+randomKillerPerk = False
