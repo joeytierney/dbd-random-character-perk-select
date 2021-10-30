@@ -34,9 +34,11 @@ def survivorMenu():
       randomPerkSurv()
       survMenuOption = False
     elif survMenuChoice == '3':
+      print('')
       print(survivorNames)
     elif survMenuChoice == '4':
-      print('Perk List')
+      print('')
+      print(survPerks)
     elif survMenuChoice == '5':
       mainMenu()
       survMenuOption = False
@@ -57,9 +59,11 @@ def killerMenu():
       randomPerkKiller()
       killerMenuOption = False
     elif killerMenuChoice == '3':
+      print('')
       print(killerNames)
     elif killerMenuChoice == '4':
-      print('Perk List')
+      print('')
+      print(killerPerks)
     elif killerMenuChoice == '5':
       mainMenu()
       killerMenuOption = False
