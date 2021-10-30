@@ -130,38 +130,27 @@ def randomKiller():
 
 def randomPerkSurv():
   randomSurvPerk = True
-  # Declare a variable as a random choice
-  random_array_item = random.choice(survPerks)
-  random_array_item1 = random.choice(survPerks)
-  random_array_item2 = random.choice(survPerks)
-  random_array_item3 = random.choice(survPerks)
+
+  random.shuffle(survPerks)
+  result = survPerks[:4]
 
   # Print the random choice
   print('\n***** RANDOM SURVIVOR PERKS *****')
   print('')
-  print('PERK 1: ' + random_array_item)
-  print('PERK 2: ' + random_array_item1)
-  print('PERK 3: ' + random_array_item2)
-  print('PERK 4: ' + random_array_item3)
+  print(result)
 
   while randomSurvPerk is True:
     goAgain = input('\nWould you like to go again? (Y/N)\n> ')
     goAgain = goAgain.upper()
 
     if goAgain == 'Y':
-      # Declare a variable as a random choice
-      random_array_item = random.choice(survPerks)
-      random_array_item1 = random.choice(survPerks)
-      random_array_item2 = random.choice(survPerks)
-      random_array_item3 = random.choice(survPerks)
+      random.shuffle(survPerks)
+      result = survPerks[:4]
 
       # Print the random choice
       print('\n***** RANDOM SURVIVOR PERKS *****')
       print('')
-      print('PERK 1: ' + random_array_item)
-      print('PERK 2: ' + random_array_item1)
-      print('PERK 3: ' + random_array_item2)
-      print('PERK 4: ' + random_array_item3)
+      print(result)
 
     elif goAgain == 'N':
       survivorMenu()
